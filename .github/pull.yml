@@ -1,0 +1,5 @@
+version: "1"
+rules:
+  - base: openwrt-lean
+    upstream: fanck0605:openwrt-lean    # change `wei` to the owner of upstream repo
+    mergeMethod: rebase
