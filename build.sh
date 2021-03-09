@@ -24,6 +24,8 @@ pushd openwrt/package
 rm -rf lean/luci-theme-argon
 git clone --depth 1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git lean/luci-theme-argon
 sed -i '/uci commit luci/i\uci set luci.main.mediaurlbase="/luci-static/argon"' lean/default-settings/files/zzz-default-settings
+# luci-app-argon-config
+git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git
 # luci-app-filebrowser
 svn co https://github.com/immortalwrt/openwrt/trunk/package/ctcgfw/luci-app-filebrowser lean/luci-app-filebrowser
 svn co https://github.com/immortalwrt/openwrt/trunk/package/ctcgfw/filebrowser lean/filebrowser
@@ -31,7 +33,7 @@ svn co https://github.com/immortalwrt/openwrt/trunk/package/ctcgfw/filebrowser l
 git clone --depth 1 https://github.com/NateLol/luci-app-oled.git lean/luci-app-oled
 sed -i "s/option enable '0'/option enable '1'/g" lean/luci-app-oled/root/etc/config/oled
 # luci-app-openclash
-git clone -b master https://github.com/vernesong/OpenClash.git
+git clone --depth 1 -b master https://github.com/vernesong/OpenClash.git
 CPU_MODEL=armv8
 mv OpenClash/luci-app-openclash lean
 echo '
