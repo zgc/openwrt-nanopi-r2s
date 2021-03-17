@@ -18,4 +18,6 @@ if [ ${SMARTDNS_ENABLED} -eq 1 ]; then
       sleep 10
     fi
   done
+else
+  echo $DATE smartdns enabled: ${SMARTDNS_ENABLED} >>$LOG
 fi
