@@ -30,8 +30,8 @@ sed -i '/uci commit luci/i\uci set luci.main.mediaurlbase="/luci-static/argon"' 
 # luci-app-argon-config
 git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git
 # luci-app-filebrowser
-svn co https://github.com/immortalwrt/openwrt/trunk/package/ctcgfw/luci-app-filebrowser lean/luci-app-filebrowser
-svn co https://github.com/immortalwrt/openwrt/trunk/package/ctcgfw/filebrowser lean/filebrowser
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-filebrowser lean/luci-app-filebrowser
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/utils/filebrowser lean/filebrowser
 # luci-app-oled
 git clone --depth 1 https://github.com/NateLol/luci-app-oled.git lean/luci-app-oled
 sed -i "s/option enable '0'/option enable '1'/g" lean/luci-app-oled/root/etc/config/oled
