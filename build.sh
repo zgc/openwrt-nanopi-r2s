@@ -589,7 +589,7 @@ echo '
 
 speed-check-mode tcp:80,ping
 ' >>smartdns/package/openwrt/custom.conf
-svn co https://github.com/immortalwrt/openwrt/trunk/package/ntlf9t/luci-app-smartdns lean/luci-app-smartdns
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-smartdns lean/luci-app-smartdns
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/smartdns lean/smartdns
 cat smartdns/package/openwrt/files/etc/config/smartdns >lean/smartdns/conf/smartdns.conf
 cat smartdns/package/openwrt/custom.conf >lean/smartdns/conf/custom.conf
