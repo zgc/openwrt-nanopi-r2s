@@ -31,6 +31,7 @@ sed -i '/uci commit luci/i\uci set luci.main.mediaurlbase="/luci-static/argon"' 
 git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git
 # luci-app-filebrowser
 svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-filebrowser lean/luci-app-filebrowser
+sed -i "s/..\/..\/luci.mk/\$(TOPDIR)\/feeds\/luci\/luci.mk/g" lean/luci-app-filebrowser/Makefile
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/utils/filebrowser lean/filebrowser
 # luci-app-oled
 git clone --depth 1 https://github.com/NateLol/luci-app-oled.git lean/luci-app-oled
@@ -590,6 +591,7 @@ echo '
 speed-check-mode tcp:80,ping
 ' >>smartdns/package/openwrt/custom.conf
 svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-smartdns lean/luci-app-smartdns
+sed -i "s/..\/..\/luci.mk/\$(TOPDIR)\/feeds\/luci\/luci.mk/g" lean/luci-app-smartdns/Makefile
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/smartdns lean/smartdns
 cat smartdns/package/openwrt/files/etc/config/smartdns >lean/smartdns/conf/smartdns.conf
 cat smartdns/package/openwrt/custom.conf >lean/smartdns/conf/custom.conf
