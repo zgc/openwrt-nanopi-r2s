@@ -7,6 +7,7 @@ git clone https://github.com/coolsnowwolf/lede.git openwrt
 
 # customize patches
 pushd openwrt
+git checkout c816854e
 git show -s --format=%h
 git am -3 ../patches/*.patch
 popd
