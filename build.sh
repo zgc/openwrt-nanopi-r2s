@@ -29,7 +29,7 @@ rm -rf lean/luci-theme-argon
 git clone --depth 1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git lean/luci-theme-argon
 sed -i '/uci commit luci/i\uci set luci.main.mediaurlbase="/luci-static/argon"' lean/default-settings/files/zzz-default-settings
 # luci-app-argon-config
-git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git
+git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git lean/luci-app-argon-config
 # luci-app-filebrowser
 svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-filebrowser lean/luci-app-filebrowser
 sed -i "s/..\/..\/luci.mk/\$(TOPDIR)\/feeds\/luci\/luci.mk/g" lean/luci-app-filebrowser/Makefile
