@@ -19,6 +19,7 @@ chmod +x package/base-files/files/etc/check_smartdns_connect.sh
 chmod +x package/base-files/files/etc/check_wan_connect.sh
 sed -i '/exit 0/i\if [[ "$(cat /etc/crontabs/root | grep "/etc/check_smartdns_connect.sh")" = "" ]]; then echo "#*/5 * * * * /etc/check_smartdns_connect.sh" >> /etc/crontabs/root; fi' package/lean/default-settings/files/zzz-default-settings
 sed -i '/exit 0/i\if [[ "$(cat /etc/crontabs/root | grep "/etc/check_wan_connect.sh")" = "" ]]; then echo "#*/5 * * * * /etc/check_wan_connect.sh" >> /etc/crontabs/root; fi' package/lean/default-settings/files/zzz-default-settings
+sed -i '/exit 0/i\if [[ "$(cat /etc/crontabs/root | grep "/usr/sbin/netspeed")" = "" ]]; then echo "0 * * * * kill -9 $(ps -ef | grep "/usr/sbin/netspeed" | grep -v grep | awk "{print $1}") 2>/dev/null" >> /etc/crontabs/root; fi' package/lean/default-settings/files/zzz-default-settings
 popd
 
 # addition packages
